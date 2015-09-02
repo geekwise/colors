@@ -1,0 +1,279 @@
+<!DOCTYPE html><html>
+<head><title>CSS Color Names</title>
+<style>
+body {
+    border: 0;
+    font-family: sans-serif;git
+    font-size: 200%;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+div {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    float: left;
+
+}
+div.center {
+    padding-bottom: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    text-align: center;
+}
+span.black {
+    color: black;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+span.white {
+    color: white;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+button {
+    border: 1pt solid black;
+    color: black;
+    font-family: sans-serif;
+    font-size: 75%;
+    font-weight: bold;
+    margin: 0.125em;
+    width: 12em;
+}
+button:hover {
+    border-color: white;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+<div class=center id=inka>
+    <span id=inkawhite class=white>&nbsp;</span>
+    <span id=inkablack class=black>&nbsp;</span>
+    <div class=center id=dinka>
+        <span id=dinkawhite class=white>&nbsp;</span>
+        <span id=dinkablack class=black>&nbsp;</span>
+        <div class=center id=doo>
+            <span id=doowhite class=white>&nbsp;</span>
+            <span id=dooblack class=black>&nbsp;</span>
+            <div id=bottle></div>
+        </div>
+    </div>
+</div>
+<script>
+/*jslint browser */
+
+/*property
+    appendChild, backgroundColor, createElement, createTextNode, firstChild,
+    forEach, getElementById, nodeValue, onclick, push, replaceChild, shift,
+    srcElement, style, target, trim
+*/
+
+(function () {
+    'use strict';
+    var colors = [
+            "aliceblue",
+            "antiquewhite",
+            "aqua",
+            "aquamarine",
+            "azure",
+            "beige",
+            "bisque",
+            "black",
+            "blanchedalmond",
+            "blue",
+            "blueviolet",
+            "brown",
+            "burlywood",
+            "cadetblue",
+            "chartreuse",
+            "chocolate",
+            "coral",
+            "cornflowerblue",
+            "cornsilk",
+            "crimson",
+            "cyan",
+            "darkblue",
+            "darkcyan",
+            "darkgoldenrod",
+            "darkgray",
+            "darkgreen",
+            "darkkhaki",
+            "darkmagenta",
+            "darkolivegreen",
+            "darkorange",
+            "darkorchid",
+            "darkred",
+            "darksalmon",
+            "darkseagreen",
+            "darkslateblue",
+            "darkslategray",
+            "darkturquoise",
+            "darkviolet",
+            "deeppink",
+            "deepskyblue",
+            "dimgray",
+            "dodgerblue",
+            "firebrick",
+            "floralwhite",
+            "forestgreen",
+            "fuchsia",
+            "gainsboro",
+            "ghostwhite",
+            "gold",
+            "goldenrod",
+            "gray",
+            "green",
+            "greenyellow",
+            "honeydew",
+            "hotpink",
+            "indianred",
+            "indigo",
+            "ivory",
+            "khaki",
+            "lavender",
+            "lavenderblush",
+            "lawngreen",
+            "lemonchiffon",
+            "lightblue",
+            "lightcoral",
+            "lightcyan",
+            "lightgoldenrodyellow",
+            "lightgray",
+            "lightgreen",
+            "lightpink",
+            "lightsalmon",
+            "lightseagreen",
+            "lightskyblue",
+            "lightslategray",
+            "lightsteelblue",
+            "lightyellow",
+            "lime",
+            "limegreen",
+            "linen",
+            "magenta",
+            "maroon",
+            "mediumaquamarine",
+            "mediumblue",
+            "mediumorchid",
+            "mediumpurple",
+            "mediumseagreen",
+            "mediumslateblue",
+            "mediumspringgreen",
+            "mediumturquoise",
+            "mediumvioletred",
+            "midnightblue",
+            "mintcream",
+            "mistyrose",
+            "moccasin",
+            "navajowhite",
+            "navy",
+            "oldlace",
+            "olive",
+            "olivedrab",
+            "orange",
+            "orangered",
+            "orchid",
+            "palegoldenrod",
+            "palegreen",
+            "paleturquoise",
+            "palevioletred",
+            "papayawhip",
+            "peachpuff",
+            "peru",
+            "pink",
+            "plum",
+            "powderblue",
+            "purple",
+            "rebeccapurple",
+            "red",
+            "rosybrown",
+            "royalblue",
+            "saddlebrown",
+            "salmon",
+            "sandybrown",
+            "seagreen",
+            "seashell",
+            "sienna",
+            "silver",
+            "skyblue",
+            "slateblue",
+            "slategray",
+            "snow",
+            "springgreen",
+            "steelblue",
+            "tan",
+            "teal",
+            "thistle",
+            "tomato",
+            "turquoise",
+            "violet",
+            "wheat",
+            "white",
+            "whitesmoke",
+            "yellow",
+            "yellowgreen"
+        ],
+        inka = document.getElementById('inka'),
+        inkablack = document.getElementById('inkablack'),
+        inkawhite = document.getElementById('inkawhite'),
+        dinka = document.getElementById('dinka'),
+        dinkablack = document.getElementById('dinkablack'),
+        dinkawhite = document.getElementById('dinkawhite'),
+        doo = document.getElementById('doo'),
+        dooblack = document.getElementById('dooblack'),
+        doowhite = document.getElementById('doowhite'),
+        bottle = document.getElementById('bottle'),
+        queue = ['\u00a0', '\u00a0', '\u00a0'];
+
+    colors.forEach(function (color) {
+        var button = document.createElement('button');
+        button.appendChild(document.createTextNode(color));
+        button.style.backgroundColor = color;
+        bottle.appendChild(button);
+    });
+    
+    function labelize(div, label) {
+        div.replaceChild(document.createTextNode(label), div.firstChild);
+    }
+    
+    function display(color) {
+        queue.shift();
+        queue.push(color);
+        inka.style.backgroundColor = queue[0];
+        dinka.style.backgroundColor = queue[1];
+        doo.style.backgroundColor = color;
+        
+        labelize(inkablack, queue[0]);
+        labelize(inkawhite, queue[0]);
+        labelize(dinkablack, queue[1]);
+        labelize(dinkawhite, queue[1]);
+        labelize(dooblack, color);
+        labelize(doowhite, color);
+    }
+    
+    bottle.onclick = function (e) {
+        e = e || event;
+        var target = e.target || e.srcElement, 
+            color = target.firstChild.nodeValue;
+        if (typeof color === 'string' && color.trim() !== '') {
+            display(color);
+        }
+    };
+
+}());
+</script>
+</body>
+</html>
